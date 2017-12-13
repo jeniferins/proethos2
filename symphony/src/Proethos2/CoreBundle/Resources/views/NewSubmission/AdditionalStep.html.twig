@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% trans %}New submission{% endtrans %}{% endblock %}
+
+{% block content %}
+    <div class="container-fluid main-content">
+        <div class="row">
+            <div class='col-md-12'>
+                <h1 class="page-header">{% trans %}New submission{% endtrans %}</h1>
+            </div>
+        </div>
+
+        {% include 'Proethos2CoreBundle:NewSubmission:meta.html.twig' %}
+
+        <div class='new-submission-tab-content'>
+            <form class='form' method='POST' action='{{ path("submission_new_fifth_step", {submission_id: submission.id}) }}'>
+
+                <p>Hello World!</p>
+
+                <div class='submission-button-controls'>
+                    <a href='{{ path("submission_new_sixth_step", {submission_id: submission.id}) }}' class='btn btn-primary'>{% trans %}Next{% endtrans %}</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
